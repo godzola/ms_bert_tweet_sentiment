@@ -8,7 +8,7 @@ This is a pretrained model from the good folks at Huggingface.
 You'll notice the size of the docker: Pytorch and he various other dependencies run 540MB - Not huge, but big enough to keep in mind. The prebuilt model trained is 5.7GB so something to keep in mind for sure.
 
 
-'''
+```
 
 user@computer %>  docker run -p 8080:8080 berttweet                   
 INFO:     Started server process [1]
@@ -32,15 +32,15 @@ user@computer %>  docker images
 REPOSITORY                                                 TAG             IMAGE ID       CREATED          SIZE
 berttweet                                                  latest          9b34014d3804   20 minutes ago   5.75GB
 
-'''
+```
 
 ### Call The Model
 
 The model works the same way as all our models, really, and can be called from the command line using curl:
 
-'''bash
+```bash
 user@computer %> curl -H "Content-Type: application/json" -d '{"items": ["my pet scorpion is cuddly and sweet", "This is an example sentence.", "And this is yet another.", "I hates snakes."]}' -X POST http://localhost:8080/predict
-'''
+```
 
 ### The Response
 
@@ -49,9 +49,9 @@ The response is a json string. We're trying to keep the responses consistennt ac
 
 A sample response for the call above looks like this: 
 
-'''
+```
 {"predictions":[{"label":"positive","text":"my pet scorpion is cuddly and sweet","score":0.9694319367408752},{"label":"neutral","text":"This is an example sentence.","score":0.9644976258277893},{"label":"negative","text":"And this is yet another.","score":0.8637563586235046},{"label":"negative","text":"I hates snakes.","score":0.9782999753952026}]}
-'''
+```
 
 
 We haven't measured the accuracy (or any other metric) of this model on a proper set of data.but it is reviewed highly on the Huggingface universe and has been downloaded nearly 4 million times.
