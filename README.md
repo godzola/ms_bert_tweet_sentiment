@@ -44,7 +44,7 @@ user@computer %> curl -H "Content-Type: application/json" -d '{"items": ["my pet
 
 ### The Response
 
-The response is a json string. We're trying to keep the responses consistennt across models, so the onservant reader will noticee we're using full words for positive, neitral or negative, AND including the text in the dictionary for wasy debugging.
+The response is a json string. We're trying to keep the responses consistennt across models, so the observant reader will notice we're using full words for positive, neitral or negative, AND including the text in the dictionary for wasy debugging.
 
 
 A sample response for the call above looks like this: 
